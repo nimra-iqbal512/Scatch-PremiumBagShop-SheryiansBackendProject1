@@ -1,19 +1,7 @@
-After  creating the three routes, I use postman for API testing.
+_ After setting debugger, run the following command on the same terminal where we have to run the node server:
+        export DEBUG=development:*
+_ Now start the server
+_ Jb tk debugger chalta rahy ga, value show hoti rahy gi.
 
-== Users Testing
-_ First I created a new collection named "Users Testing". 
-_ Inside collection, I created a new 'GET' request named as "base url test".
-_ The URL of the request was 'localhost:3000/users'. I save this url inside a variable named as 'baseurl'. The scope of variable was its collection. 
-_ I send the request and save after after the response comes.
-
-== Products Testing
-_ First I created a new collection named "Products Testing". 
-_ Inside collection, I created a new 'GET' request named as "base url test".
-_ The URL of the request was 'localhost:3000/products'. I save this url inside a variable named as 'baseurl'. The scope of variable was its collection. 
-_ I send the request and save after after the response comes.
-
-== Owners Testing
-_ First I created a new collection named "Owners Testing". 
-_ Inside collection, I created a new 'GET' request named as "base url test".
-_ The URL of the request was 'localhost:3000/owners'. I save this url inside a variable named as 'baseurl'. The scope of variable was its collection. 
-_ I send the request and save after after the response comes.
+_ To stop the value printed for debugger, we can run the command:
+        export DEBUG=
