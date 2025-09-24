@@ -1,7 +1,24 @@
-_ After setting debugger, run the following command on the same terminal where we have to run the node server:
-        export DEBUG=development:*
-_ Now start the server
-_ Jb tk debugger chalta rahy ga, value show hoti rahy gi.
+== Benefits of this approach (development.json, as a separate file)
 
-_ To stop the value printed for debugger, we can run the command:
-        export DEBUG=
+== How the config package works with environments?
+The config package looks at your NODE_ENV environment variable.
+Based on its value, it automatically loads the right JSON file from the config/ folder.
+
+== Example Folder Structure
+config/
+   default.json
+   development.json
+   production.json
+   test.json
+
+== How it chooses the file?
+_ If you don’t set anything → it uses 'default.json'.
+_ If you set:
+        export NODE_ENV=development
+  it merges 'default.json' + 'development.json'.
+_ If you set:
+        export NODE_ENV=production
+  it merges 'default.json' + 'production.json'
+_ If you set:
+        export NODE_ENV=test
+  it merges 'default.json' + 'test.json'
