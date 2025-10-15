@@ -1,14 +1,3 @@
-== Routes
-/ -> signup or login
-/shop -> shop
-/users/cart -> cart
-/admin -> admin panel
-/owner/products -> show all products
-/owner/admin -> show admin panel to create products
+.env at this point
 
-==
-- Create 'index.js' inside routes to create the default route
-- set 'index.js' in 'app.js'
-- Design 'index.ejs' for landing page(signup and login)
-- creating resgister router in 'usersRouter.js' to register a new user
-- testing user via postman
+JWT_KEY = "secret"

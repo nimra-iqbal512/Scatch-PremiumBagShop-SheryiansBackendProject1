@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userModel = require('../models/user-model');
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 
 router.get('/', (req, res) => {
     res.send('Hi for user');
