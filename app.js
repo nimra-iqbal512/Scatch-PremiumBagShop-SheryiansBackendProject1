@@ -3,12 +3,13 @@ const app = express();
 const path = require('path');
 const cookieParser = require('cookie-parser');
 
+const db = require('./config/mongoose-connection');
 const defaultRouter = require('./routes/index');
 const ownersRouter = require('./routes/ownersRouter');
 const usersRouter = require('./routes/usersRouter');
 const productsRouter = require('./routes/productsRouter');
 
-const db = require('./config/mongoose-connection');
+require('dotenv').config(); // With this we can use all the variables stored inside '.env' file. Syntax: process.env.VARIABLE_NAME
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

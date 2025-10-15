@@ -1,3 +1,15 @@
-.env at this point
+npm install dotenv      //You typically create a file '.env' in your project root.
 
-JWT_KEY = "secret"
+require('dotenv').config(); //It reads the '.env' file, parses the variables and store them into 'process.env'. 
+// With this we can use all the variables stored inside '.env' file. Syntax: process.env.VARIABLE_NAME
+
+== .env
+PORT=3000
+
+// Inside code, we can use,
+console.log(process.env.PORT);
+
+== Without dotenv, we have to set environment variables using terminal like:
+export PORT=3000
+
+Its messy, so detenv makes this automatic and cross-platform.
