@@ -19,7 +19,6 @@ const userSchema = new mongoose.Schema({
     email: String,
     password: String,
     contact: Number,
-    isAdmin: Boolean,
     picture: String,
     // cart: [], this statement can also be writtten as below
     cart: {
