@@ -1,6 +1,14 @@
-console.log(process.env.NODE_ENV);  // To check the value of set environment. If 'undefined', then value is set.
+== Routes
+/ -> signup or login
+/shop -> shop
+/users/cart -> cart
+/admin -> admin panel
+/owner/products -> show all products
+/owner/admin -> show admin panel to create products
 
-== set value for environment variables using below command.
-      export NODE_ENV=development
-
-Now test the route /owners/create in postman
+==
+- Create 'index.js' inside routes to create the default route
+- set 'index.js' in 'app.js'
+- Design 'index.ejs' for landing page(signup and login)
+- creating resgister router in 'usersRouter.js' to register a new user
+- testing user via postman
