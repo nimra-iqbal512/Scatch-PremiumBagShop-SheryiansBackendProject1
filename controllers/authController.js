@@ -9,7 +9,8 @@ module.exports.registerUser = async (req, res)=>{
 
         let user = await userModel.findOne({email});
         if(user){
-            return res.send('This email is already taken');
+            req.flash("error", "You already have an account, please login.");
+            return res.redirect("/");
         }else{
             bcrypt.genSalt(10, function(err, salt) {
                 bcrypt.hash(password, salt, async function(err, hash) {
@@ -27,7 +28,9 @@ module.exports.registerUser = async (req, res)=>{
             });
         }
     } catch (error) {
-        res.send(error.message);   
+        // res.send(error.message);   
+        req.flash("error", error.message);
+        return res.redirect("/");
     };
 }
 
@@ -37,18 +40,28 @@ module.exports.loginUser = async (req, res)=>{
     
         let user = await userModel.findOne({email});
         if(!user){
-            return res.send('Username or password is invalid');
+            // return res.send('Username or password is invalid');
+            req.flash("error", "Username or password is invalid");
+            return res.redirect("/");
         }
         bcrypt.compare(password, user.password, function(err, result) {
             if(!result){
-                return res.send('Username or password is invalid');
+                // return res.send('Username or password is invalid');
+                req.flash("error", "Username or password is invalid");
+                return res.redirect("/");
             }   
             let token = (generateToken(user));
             res.cookie('token', token);
-            res.send(user);
+            res.redirect('/shop');
         });  
     } catch (error) {
-        res.send(error.message);        
+        // res.send(error.message);        
+        req.flash("error", error.message);
+        return res.redirect("/");
     }    
-
 }
+
+module.exports.logOut = async (req, res)=>{
+    res.cookie("token", "");
+    res.redirect("/");
+};

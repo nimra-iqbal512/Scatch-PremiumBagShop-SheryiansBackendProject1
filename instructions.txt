@@ -1,3 +1,4 @@
-We created a separarte utility fn/model to generate token, that has to be set in cookies.
+== .env at this point
 
-== Note: We can also create a model for bcrypt to encrypt password
+JWT_KEY=secret
+EXPRESS_SESSION_SECRET=express_session_secret
