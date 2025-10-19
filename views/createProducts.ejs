@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <h1 class="pl-2 pt-2 text-2xl">Scatch</h1>
+    <hr class="mt-2 h-[3px] bg-gray-500 border-0">
+
+    <div class="flex gap-20 p-10">
+        <div class="sidebar flex flex-col gap-1 min-w-40">
+            <p>All Products</p>
+            <p>Create new product</p>
+        </div>
+        <div class="new-product">
+            <h1 class="text-2xl font-bold tracking-tighter">Create New Product</h1>
+            <h2 class="text-xl font-bold mt-2">Product Details</h2>
+            <form action="/owners/product/create" method="post" enctype="multipart/form-data">
+                <label class="block mt-3" for="image">Product Image</label>
+                <input class="border border-gray-700 px-3 py-1 rounded-md w-72" type="file">
+
+                <div class="flex flex-wrap gap-3 mt-2">
+                    <input class="border border-gray-700 px-3 py-1 rounded-md w-72 outline-none" type="text"
+                        placeholder="Product Name">
+                    <input class="border-1 border-gray-700 px-3 py-1 rounded-md w-72 outline-none" type="text"
+                        placeholder="Product Price">
+                    <input class="border border-gray-700 px-3 py-1 rounded-md w-72 outline-none" type="text"
+                        placeholder="Discount Price">
+                </div>
+
+                <h2 class="text-xl font-bold mt-5">Panel Details</h2>
+
+                <div class="flex flex-wrap gap-3 mt-2">
+                    <input class="border border-gray-700 px-3 py-1 rounded-md w-72 outline-none" type="text"
+                        placeholder="Background Color">
+                    <input class="border border-gray-700 px-3 py-1 rounded-md w-72 outline-none" type="text"
+                        placeholder="Panel Color">
+                    <input class="border border-gray-700 px-3 py-1 rounded-md w-72 outline-none" type="text"
+                        placeholder="Text Color">
+                </div>
+
+                <input class="cursor-pointer bg-blue-500 text-white px-5 py-2 rounded-lg mt-5" type="submit" value="Create New Product">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
