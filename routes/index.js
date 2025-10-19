@@ -10,7 +10,7 @@ router.get('/', (req, res)=>{
 router.get('/shop', isLoggedIn, (req, res)=>{
     // console.log(req.user);
     
-    res.send("shop");
+    res.render("shop");
 });
 
 
