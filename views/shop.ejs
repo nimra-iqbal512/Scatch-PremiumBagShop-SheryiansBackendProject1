@@ -31,7 +31,21 @@
             </div>
         </div>
         <div class="items flex flex-wrap gap-5">
-            <div class="item w-40 h-50">
+            <% products.forEach(product=>{ %>
+                <div class="item w-40 h-50">
+                    <div class="image w-full h-36 bg-yellow-500">
+                        <img class="w-full h-full" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="">
+                    </div>
+                    <div class="dexcription w-40 h-14 bg-<%= product.bgcolor %> text-<%= product.textcolor %> flex justify-between align-center p-2 px-4 text-sm tracking-tighter">
+                        <div class="">
+                            <p><%= product.name %></p>
+                            <p><%= product.price %></p>
+                        </div>
+                        <div class="mt-1"><p class="bg-white px-2 text-lg rounded-full">+</p></div>
+                    </div>
+                </div>
+            <% }) %>
+            <!-- <div class="item w-40 h-50">
                 <div class="image w-full h-36 bg-yellow-500"></div>
                 <div class="dexcription w-40 h-14 bg-red-500 flex justify-between align-center p-2 px-4 text-sm tracking-tighter">
                     <div class="">
@@ -100,17 +114,7 @@
                     </div>
                     <div class="mt-1"><p class="bg-white px-2 text-lg rounded-full">+</p></div>
                 </div>
-            </div>
-            <div class="item w-40 h-50">
-                <div class="image w-full h-36 bg-yellow-500"></div>
-                <div class="dexcription w-40 h-14 bg-red-500 flex justify-between align-center p-2 px-4 text-sm tracking-tighter">
-                    <div class="">
-                        <p>Clinge Bag</p>
-                        <p>$ 1200</p>
-                    </div>
-                    <div class="mt-1"><p class="bg-white px-2 text-lg rounded-full">+</p></div>
-                </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>

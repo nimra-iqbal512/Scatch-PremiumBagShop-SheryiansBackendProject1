@@ -1,4 +1,4 @@
-== .env at this point
+<img class="w-full h-full" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="">
 
-JWT_KEY=secret
-EXPRESS_SESSION_SECRET=express_session_secret
+== src:
+data:image/jpeg;base64 --> This is called Data URL. It tells the browser that the image is directly included here, not from a file or URL.
