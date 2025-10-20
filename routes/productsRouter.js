@@ -12,7 +12,7 @@ router.post('/create', upload.single('image'), async (req, res) => {
             price,
             discount,
             bgcolor,
-            panecolor,
+            panelcolor,
             textcolor,
         } = req.body;
     
@@ -22,9 +22,11 @@ router.post('/create', upload.single('image'), async (req, res) => {
             price,
             discount,
             bgcolor,
-            panecolor,
+            panelcolor,
             textcolor,
         })
+        // console.log(product);
+        
         req.flash("success", "Product created successfully")
         res.redirect("/owners/admin");
     } catch (error) {
